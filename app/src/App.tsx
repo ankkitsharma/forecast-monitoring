@@ -173,7 +173,10 @@ function App() {
           <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 overflow-hidden">
             <div className="h-[400px] w-full">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={chartData}>
+                <LineChart
+                  data={chartData}
+                  margin={{ top: 5, right: 30, left: 20, bottom: 25 }}
+                >
                   <CartesianGrid
                     strokeDasharray="3 3"
                     vertical={false}
@@ -183,11 +186,17 @@ function App() {
                     dataKey="time"
                     tick={{ fontSize: 12 }}
                     minTickGap={30}
+                    label={{
+                      value: "Target Time End (UTC)",
+                      position: "insideBottom",
+                      offset: -15,
+                      fontSize: 12,
+                    }}
                   />
                   <YAxis
                     tick={{ fontSize: 12 }}
                     label={{
-                      value: "Generation (MW)",
+                      value: "Power (MW)",
                       angle: -90,
                       position: "insideLeft",
                       fontSize: 12,
